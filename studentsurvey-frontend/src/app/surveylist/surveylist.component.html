@@ -1,0 +1,33 @@
+<!--
+    HTML Document for the list of Surveys. 
+-->
+<div *ngFor="let product of productList">
+    <div *ngIf="product.firstName != null">
+    <h2>
+        {{ product.firstName }} {{ product.lastName }}
+    </h2>
+    <p>Date of Survey: {{ product.date }}</p>
+    <p>
+        {{ product.streetName }} <br>
+        {{ product.city }}, {{ product.state }} {{ product.zipCode }}
+    </p>
+    <p>
+        {{ product.phoneNumber }} / {{ product.email}}
+    </p>
+    <h4 
+    *ngIf="product.checkedBoxes || product.choice || product.recommendation"
+    >
+        Survey Responses: 
+    </h4>
+    <p *ngIf="product.checkedBoxes">
+        The best part about this university is the {{product.checkedBoxes}}
+    </p>
+    <p *ngIf="product.choice">
+        I chose this university because of {{product.choice}}
+    </p>
+    <p *ngIf="product.recommendation">
+        I am {{product.recommendation}} to recommend this university
+    </p>
+    </div>
+</div>
+<button type="button" (click)="onClickBack()">Back</button>

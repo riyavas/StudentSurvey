@@ -1,0 +1,16 @@
+<!-- Home Page for the Frontend Application -->
+
+<h1>Welcome to the Student Survey!</h1>
+<div *ngIf="router.url == '/'">
+<!-- Button for the Survey -->
+<a routerLink = "survey">
+  <button>Fill out the Survey</button> 
+</a>
+
+<!-- Button for the List -->
+<a routerLink = "surveylist">
+  <button>View all the Surveys</button> 
+</a>
+</div>
+
+<router-outlet></router-outlet>

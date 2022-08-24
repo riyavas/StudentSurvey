@@ -1,0 +1,64 @@
+<!-- 
+    HTML document of the student survey. 
+-->
+<form #surveyanswers = "ngForm" (ngSubmit) = 'onClickSubmit(surveyanswers.value)'>
+<p>Today is {{ today }}</p>
+<h4>Required fields:</h4>
+    <!-- Required Text Elements -->
+    <label for="fname">First Name: </label>
+    <input type="text" id="fname" name="fname" required style="width:15%" ngModel>
+    <label for="lname"> Last Name: </label>
+    <input type="text" id="lname" name="lname" required style="width:15%" ngModel><br><br>
+    <label for="street">Street Address: </label>
+    <input type="text" id="street" name="street" required style="width:35%" ngModel><br><br>
+    <label for="city">City: </label>
+    <input type="text" id="city" name="city" required ngModel>
+    <label for="state"> State: </label>
+    <input type="text" id="state" name="state" required ngModel>
+    <label for="zip"> Zip Code: </label>
+    <input type="text" id="zip" name="zip" required ngModel><br><br>
+    <label for="pnumber">Phone Number: </label>
+    <input type="text" id="pnumber" name="pnumber" required ngModel>
+    <label for="email"> Email: </label>
+    <input type="email" id="email" name="email" required style="width:20%" ngModel><br><br>
+    
+<h4>Survey questions:</h4>
+<p>What do you like most about campus?</p>
+    <!-- Checkboxes -->
+    <input type="checkbox" id="students" name="students" value="students" ngModel>
+    <label for="students">Students</label><br>
+    <input type="checkbox" id="location" name="location" value="location" ngModel>
+    <label for="location">Location</label><br>
+    <input type="checkbox" id="campus" name="campus" value="campus" ngModel>
+    <label for="campus">Campus</label><br>
+    <input type="checkbox" id="atmosphere" name="atmosphere" value="atmosphere" ngModel>
+    <label for="atmosphere">Atmosphere</label><br>
+    <input type="checkbox" id="dorms" name="dorms" value="dorms" ngModel>
+    <label for="dorms">Dorm Rooms</label><br>
+    <input type="checkbox" id="sports" name="sports" value="sports" ngModel>
+    <label for="sports">Sports</label><br>
+
+<p>What made you choose this university?</p>
+    <!-- Radio Buttons -->
+    <input type="radio" id="friends" name="choice" value="friends" ngModel>
+    <label for="friends">Friends</label><br>
+    <input type="radio" id="tv" name="choice" value="tv" ngModel>
+    <label for="tv">Television</label><br>
+    <input type="radio" id="web" name="choice" value="web" ngModel>
+    <label for="web">Internet</label><br>
+    <input type="radio" id="other" name="choice" value="other" ngModel>
+    <label for="other">Other</label><br><br>
+
+
+<label for="recommendation">How likely are you to recommend this university? </label>
+    <!-- Dropdown List -->
+    <select name="recommendation" id="recommendation" ngModel>
+        <option value="vlikely">Very Likely</option>
+        <option value="likely">Likely</option>
+        <option value="unlikely">Unlikely</option>
+     </select><br><br>
+    
+    <!-- Submit and Cancel Buttons -->
+    <button type="submit" value="Submit">Submit</button>
+    <button type="button" (click)="onClickCancel()">Cancel</button>
+</form>
